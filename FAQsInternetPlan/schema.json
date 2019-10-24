@@ -1,0 +1,1092 @@
+{
+    "friendlyName" : "Ask Planter",
+    "logQueries" : true,
+    "uniqueName" : "AskPlanter",
+    "defaults" : {
+        "defaults" : {
+            "assistant_initiation" : "task://greeting",
+            "fallback" : "task://fallback",
+            "collect" : {
+                "validate_on_failure" : "task://collect_fallback"
+            }
+        }
+    },
+    "styleSheet" : {
+        "style_sheet" : {
+            "collect" : {
+                "validate" : {
+                    "on_failure" : {
+                        "repeat_question" : false,
+                        "messages" : [
+                            {
+                                "say" : "I didn't get that. What did you say?"
+                            },
+                            {
+                                "say" : "I still didn't catch that. Please repeat."
+                            },
+                            {
+                                "say" : "Let's try one last time. Say it again please."
+                            }
+                        ]
+                    },
+                    "on_success" : { "say" : "" },
+                    "max_attempts" : 4
+                }
+            },
+            "voice" : {
+                "say_voice" : "Polly.Matthew"
+            }
+        }
+    },
+    "fieldTypes" : [],
+    "tasks" : [
+        {
+            "uniqueName" : "location_london",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "You have a few options. If you're in the west end, go check out Central Cannabis at 666 Wonderland Rd N. If you're close to downtown you can stop by J. London at 691 Richmond St. Suite 5. If you're in the south end, go see Tweed at 1025 Wellington Rd. Unit A-2."
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "London"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm in London"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Im in London"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "In london"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "London Ontario"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "location_toronto",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Well, you have a bunch of options. If you're near YorkVille. you can choose Ameri at 20 Cumberland St. If you're near the U of T, you can choose Canna Cabana Toronto at 435 (B) Yonge St. or Tokyo Smoke at 333 Yonge St. If you're downtown you can stop by The Hunny Pot Cannabis Co. at 202 Queens St. W or check out Nova Cannabis at 499 Queen St. W.?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Toronto"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Im in Toronto"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm in Toronto"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "In toronto"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Toronto Ontario"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I live in Toronto?"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "location_ottawa",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Well, you have a couple options depending where in Ottawa you are. You can choose from Fire and Flower at 129 York St, or head down to Hobo Recreational Cannabis at 321A Bank St. You can even stop by Superette at 1306 Wellington St W."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Ottawa"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm in Ottawa"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Im in Ottawa"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Ottawa Ontario"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "In ottawa?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I live in ottawa"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "reroute_user",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Sure, no worries. Do you want help finding a cannabis product, dispensary or information on a product?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Go back"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Back to beginning"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Go back to beginning"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go back to the beginning"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go back to the start"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "find_dispensary",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Where in Ontario are you located?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm looking for a dispensary"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "looking for a dispensary"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "dispensary"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "find a dispensary"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "looking for a store"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "for a dispensary"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "for a store"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "store"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Im looking for a dispensary"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "help me with a dispensary"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "looking for a shop to sell me"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "brick and mortar"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "help me with a dispensary"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "find_info",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Okay. What product would you like help with?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "find more information"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "information"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "find information"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "more information"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm looking for information"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Im looking for information"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want info"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "info"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "more info"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Information on a product"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "info on a product"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Information on a cannabis product"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Info on a cannabis product"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "looking for information"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "information cannabis product"
+
+                }
+            ]
+        },
+        {
+            "uniqueName" : "cannabis_product",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Okay, I can make a few suggestions from a few different categories. Are you looking for a pre roll, flower or gel cap? Remember, you can go back at anytime by saying 'Go Back'."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "What product is right for me?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm looking for a product"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "looking for cannabis"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cannabis product"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "What product is right for me?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm looking for weed"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Help me find weed"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Help me find a product"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Cannabis"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "find a cannabis product"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "find a product"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "find cannabis"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_preroll",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Pre roll it is! Do you want High THC, High CBD, or a balance of CBD and THC?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Im looking for a preroll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "look for a pre roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm looking for a preroll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "preroll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want a preroll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I would like a preroll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Pre roll please"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_flower",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Flower it is! Do you want High THC, High CBD, or a balance of CBD and THC?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Im looking for flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "look for flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm looking for flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I would like flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "flower please"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_gelcap",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Gel cap it is! Do you want High THC, High CBD, or a balance of CBD and THC?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Im looking for a gel cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "look for a gel cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm looking for a gel cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "gel cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want a gel cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I would like gel caps"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "gel caps please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want gel caps"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "gel caps"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Looking for gel caps"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_highThcFlower",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "High THC flower, got it! I suggest going with Lola Montes by Edison. It's an indica with a THC content between 12-21%. Price tag is set at $9.71/g. Or, you can try Blue Dream by Aurora. It's a sativa with a THC content between 13-27%. Price tag is set at $10.00/g.?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "High thc flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "thc flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm looking for high thc flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "im looking for high thc flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want high thc flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "high Thc flower please"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_HighCBDFlower",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "High CBD flower, got it! I suggest going with Great White Shark by San Rafael '71. It's a sativa with a CBD content between 9-14%. Price tag is set at $11.85/g. You can also try North Star CBD by Altavie. It's a sativa with a CBD content between 11-18.50%. Price tag is set at $13.18/g."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "High cbd flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm looking for high cbd flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "im looking for cbd flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "c b d flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd flower please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "high cbd flower please"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_BalanceFlower",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "A Balanced flower, got it! I suggest going with Argyle by Tweed. It's an indica with a CBD content between 8-14% and a THC content between 2-10%. Price tag is set at $9.53/g. You can also try Ease by Tokyo Smoke. It's a sativa with a CBD content between 8-15% and a THC content between 6-11%. Price tag is set at $10.56/g."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Im looking for a balanced flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balance flower please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balanced flower please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balance flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balanced flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want a balanced flower"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_HighThcPreRoll",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "High THC pre roll, got it! I suggest going with Subway Scientist Pre-Roll by Riff. This has a THC content between 15.00-27.00% and is an indica. The price tag is $11.10/pack. You can also go with Easy Cheesey Pre-Roll by Liiv. This has a THC content between 16.00-22.00% and is a sativa. The price tag is $11.70/pack."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "High THC pre roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "high thc pre-roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "thc pre roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Thc pre roll please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want a thc pre roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I would like thc pre roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Thc pre roll please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "high thc joint"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_HighCBDPreRoll",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "High CBD pre roll, got it! I suggest trying with THC CBD Indica Preroll by THC Biomed. It's an indica with a CBD content between 7-15% and a THC content between 5-8%. Price tag is set at $20.95/pack. You can also try Saturday Morning Pre-Roll by Saturday. It's a sativa with a CBD content between 1-9%. Price tag is set at $15.30/pack."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "High cbd pre roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "CBD pre roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "High cbd pre-roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "pre-roll cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "a high cbd pre roll joint please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd preroll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want a cbd pre roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I would like a cbd pre roll"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_BalanceThcPreRoll",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "A balanced Pre roll, got it! I have a few options for you... You can also try No.301 Napali CBD Pre-Roll by Haven St. It's an indica with a CBD content between 7-12% and a THC content between 4-8%. Price tag is set at $72.65/pack. I suggest going with Dancehall Preroll by Spinach. It's a sativa with a CBD content between 2-10% and a THC content between 3-12%. Price tag is set at $14.70/pack."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Balanced pre roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balance pre roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balanced preroll"
+                },
+                {
+                    "language" : "en-US",b
+                    "taggedText" : "balance pre roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want my pre roll to be balanced"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "a balanced pre roll please"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_ThcGelCap",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "High THC gel cap, got it! I suggest going with Sativa Liquid Gels by Aurora. It's a sativia a with a THC level of 6.30mg. Price tag is set at $52.95/bottle. You can also try Highlands Softgels by Tweed. It's an indica with a THC level of 10.00 mg. Price tag is set at $58.80/bottle."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "High THC gel cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "High THC gelcap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "THC gelcap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "THC gel cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want a thc gel cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want a thc gelcap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "thc gelcap please"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_CBDGelCap",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "High CBD gel cap, got it! I suggest going with Harmonic Softgels by Altavie. It's a sativa with a CBD level of 3.51 mg. Price tag is set at $48.40/bottle. You can also try CBD Liquid Gels by Aurora. It's a hybrid with a CBD level of 11.00 mg. Price tag is set at $119.85/bottle."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "High CBD Gel cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "High CBD gelcap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "CBD gel cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "CBD gelcap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want a high cbd gel cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want a high cbd gelcap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "high cbd gel cap please"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_BalanceGelCap",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "A balanced gel cap, got it! I suggest going with Penelope Softgels by Tweed. It's a hybrid with a CBD level of 1.80 mg and a THC level of 2.50 mg. Price tag is set at $20.35/bottle. You can also try Argyle Softgels by Tweed. It's an indica with a CBD level of 12.00 mg and a THC level of 10.00 mg. Price tag is set at $58.80/bottle."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Balanced Gel Cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "A balance THC and CBD gel cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Balance gelcap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balance gel cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balanced gelcap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want a balanced gel cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want a balanced gelcap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "gel cap please"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "greeting",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Hi, I'm Planter. I make choosing cannabis as easy as asking a friend. Would you like to find a cannabis product, a dispensary, or find more information on a cannabis product?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hi"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good morning"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good afternoon"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hello"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "heya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi!"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hello."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what'us up"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yo"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what can you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what do you do"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "whatsup"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sup"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "goodbye",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Thanks for chatting :) Talk soon!."
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all for today"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that is all thank you"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "no thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go away"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cancel"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodbye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodnight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop talking"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "see ya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "bye bye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good bye"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "I'm sorry didn't quite get that. Please say that again."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "collect_fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Looks like I'm having trouble. Apologies for that. Let's start again, how can I help you today?"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        }
+    ],
+    "modelBuild" : { "uniqueName" : "v0.01" }
+}
