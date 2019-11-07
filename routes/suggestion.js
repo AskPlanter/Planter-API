@@ -1,4 +1,5 @@
 var express = require('express');
+var _ = require('lodash');
 var router = express.Router();
 
 /* GET users listing. */
@@ -8,7 +9,7 @@ router.post('/', function(req, res, next) {
     let reqBody = JSON.stringify(req.body);
     let city = reqBody['CurrentInput'];
     console.log(reqBody['CurrentInput']);
-    console.log(reqBody.CurrentInput);
+    console.log(_.get(reqBody, 'CurrentInput'));
     console.log(reqBody);
 
     if(city.includes("toronto") || city.includes("Toronto") || city.includes("GTA") || city.includes("gta")) {
