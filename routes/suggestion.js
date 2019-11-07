@@ -10,6 +10,7 @@ router.post('/', function(req, res, next) {
     let city = reqBody['CurrentInput'];
     console.log(reqBody['CurrentInput']);
     console.log(_.get(reqBody, 'CurrentInput'));
+    console.log(JSON.parse(reqBody));
     console.log(reqBody);
 
     if(city.includes("toronto") || city.includes("Toronto") || city.includes("GTA") || city.includes("gta")) {
