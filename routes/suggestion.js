@@ -7,7 +7,8 @@ router.post('/', function(req, res, next) {
     let msg = "I can't seem to find a dispensary in your area!";
     let reqBody = JSON.stringify(req.body);
     let city = reqBody['CurrentInput'];
-    console.log(city);
+    console.log(reqBody['CurrentInput']);
+    console.log(reqBody.CurrentInput);
     console.log(reqBody);
 
     if(city.includes("toronto") || city.includes("Toronto") || city.includes("GTA") || city.includes("gta")) {
