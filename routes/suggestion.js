@@ -8,10 +8,7 @@ router.post('/', function(req, res, next) {
     let msg = "I can't seem to find a dispensary in your area!";
     let reqBody = JSON.parse(JSON.stringify(req.body));
     let city = reqBody['CurrentInput'];
-    console.log(reqBody['CurrentInput']);
-    console.log(_.get(reqBody, 'CurrentInput'));
-    console.log(JSON.parse(reqBody));
-    console.log(reqBody);
+    //console.log(reqBody);
 
     if(city.includes("toronto") || city.includes("Toronto") || city.includes("GTA") || city.includes("gta")) {
         msg = "You have a few options. If you're near YorkVille. you can choose Ameri at 20 Cumberland St. If you're near the U of T, you can choose Canna Cabana Toronto at 435 (B) Yonge St. or Tokyo Smoke at 333 Yonge St. If you're downtown you can stop by The Hunny Pot Cannabis Co. at 202 Queens St. W or check out Nova Cannabis at 499 Queen St. W. Do you want help finding a product or are you good?";
