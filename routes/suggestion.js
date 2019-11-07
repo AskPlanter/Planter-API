@@ -6,7 +6,7 @@ var router = express.Router();
 router.post('/', function(req, res, next) {
     // Fallback
     let msg = "I can't seem to find a dispensary in your area!";
-    let reqBody = JSON.stringify(req.body);
+    let reqBody = JSON.parse(JSON.stringify(req.body));
     let city = reqBody['CurrentInput'];
     console.log(reqBody['CurrentInput']);
     console.log(_.get(reqBody, 'CurrentInput'));
