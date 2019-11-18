@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var suggestionRouter = require('./routes/suggestion');
 var findDispensaryRouter = require('./routes/find_dispensary');
+var ageVerificationRouter = require('./routes/age_verification');
 
 var app = express();
 
@@ -27,5 +28,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/suggestion', suggestionRouter);
 app.use('/find_dispensary', findDispensaryRouter);
+app.use('/age_verification', ageVerificationRouter);
 
 module.exports = app;
