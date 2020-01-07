@@ -1,0 +1,2989 @@
+{
+    "friendlyName" : "",
+    "logQueries" : true,
+    "uniqueName" : "Planter",
+    "defaults" : {
+        "defaults" : {
+            "assistant_initiation" : "task://greeting",
+            "fallback" : "task://fallback",
+            "collect" : {
+                "validate_on_failure" : "task://collect_fallback"
+            }
+        }
+    },
+    "styleSheet" : {
+        "style_sheet" : {
+            "collect" : {
+                "validate" : {
+                    "on_failure" : {
+                        "repeat_question" : false,
+                        "messages" : [
+                            {
+                                "say" : {
+                                    "speech" : "I didn't get that. What did you say?"
+                                }
+                            },
+                            {
+                                "say" : {
+                                    "speech" : "I still didn't catch that. Please repeat."
+                                }
+                            },
+                            {
+                                "say" : {
+                                    "speech" : "Let's try one last time. Say it again please."
+                                }
+                            }
+                        ]
+                    },
+                    "on_success" : { "say" : { "speech" : "" } },
+                    "max_attempts" : 4
+                }
+            },
+            "voice" : {
+                "say_voice" : "Polly.Matthew"
+            },
+            "name" : ""
+        }
+    },
+    "fieldTypes" : [
+        {
+            "uniqueName" : "Capsule",
+            "values" : [
+                {
+                    "language" : "en-US",
+                    "value" : "THC",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "CBD",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "Balanced",
+                    "synonymOf" : null
+                }
+            ]
+        },
+        {
+            "uniqueName" : "Preroll",
+            "values" : [
+                {
+                    "language" : "en-US",
+                    "value" : "THC",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "CBD",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "Balanced",
+                    "synonymOf" : null
+                }
+            ]
+        },
+        {
+            "uniqueName" : "Flower",
+            "values" : [
+                {
+                    "language" : "en-US",
+                    "value" : "THC",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "CBD",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "Balanced",
+                    "synonymOf" : null
+                }
+            ]
+        },
+        {
+            "uniqueName" : "dominance",
+            "values" : [
+                {
+                    "language" : "en-US",
+                    "value" : "thc",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "cbd",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "balance",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "balanced",
+                    "synonymOf" : "balance"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "mix",
+                    "synonymOf" : "balance"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "mixture",
+                    "synonymOf" : "balance"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "c b d",
+                    "synonymOf" : "cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "t h c",
+                    "synonymOf" : "thc"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "products",
+            "values" : [
+                {
+                    "language" : "en-US",
+                    "value" : "flower",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "nug",
+                    "synonymOf" : "flower"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "weed",
+                    "synonymOf" : "flower"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "kush",
+                    "synonymOf" : "flower"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "herb",
+                    "synonymOf" : "flower"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "pre roll",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "pre-roll",
+                    "synonymOf" : "pre roll"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "joint",
+                    "synonymOf" : "pre roll"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "jay",
+                    "synonymOf" : "pre roll"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "capsule",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "gel cap",
+                    "synonymOf" : "capsule"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "gel-cap",
+                    "synonymOf" : "capsule"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "pill",
+                    "synonymOf" : "capsule"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "plants",
+            "values" : [
+                {
+                    "language" : "en-US",
+                    "value" : "indica",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "sativa",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "hybrid",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "hibrid",
+                    "synonymOf" : "hybrid"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "mix",
+                    "synonymOf" : "hybrid"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "both",
+                    "synonymOf" : "hybrid"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "cannabis-attributes",
+            "values" : [
+                {
+                    "language" : "en-US",
+                    "value" : "cbd",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "thc",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "plant type",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "cannabinol",
+                    "synonymOf" : "cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "type",
+                    "synonymOf" : "plant type"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "terpenes",
+                    "synonymOf" : null
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "terpene",
+                    "synonymOf" : "terpenes"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "Tetrahydrocannabinol",
+                    "synonymOf" : "thc"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "effects of cbd",
+                    "synonymOf" : "cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "effects of thc",
+                    "synonymOf" : "thc"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "types",
+                    "synonymOf" : "plant type"
+                },
+                {
+                    "language" : "en-US",
+                    "value" : "types of cannabis",
+                    "synonymOf" : "plant type"
+                }
+            ]
+        }
+    ],
+    "tasks" : [
+        {
+            "uniqueName" : "ottawa_retail",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "You should stop by Superette in the westend at 1306 Wellington St W. I can let them know you're on the way for your product."
+                    },
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : "https://teal-labradoodle-8359.twil.io/notify"
+                            },
+                            "name" : "collect_comments",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.YES_NO",
+                                    "question" : "Does this work?",
+                                    "name" : "comments"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "ottawa gatineau "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'll be in ottawa "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm going to ottawa"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm in ottawa"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I live in ottawa"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "ottowa "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "im in ottawa"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "ottawa"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "redirect_legal2",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Okay. What would you like to know?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "edible",
+                                "beverages",
+                                "topicals",
+                                "vape",
+                                "oil",
+                                "thc_info",
+                                "cbd_info",
+                                "terpenes",
+                                "plant_types",
+                                "cannabis_product",
+                                "find_dispensary"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "legalization_2",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Congratulations Canada! Another year and another big milestone in the legal journey. Legalization 2.0 is the legalization of a whole new line of products. This time around brought edibles, beverages, vapes and topicals. However, you won't be seeing these in the stores until earliest Mid-Decemeber but more likely in the new year. What new product would you like to know about? "
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "beverage",
+                                "edible",
+                                "vape",
+                                "topical",
+                                "oil"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "legalization 2.0"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "tell me about legalization 2"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "legalize "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what did they legalize "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what is the new legalization "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "tell me about the new legalization"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "legalization 2"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "the new market"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "legalization"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "vape",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Cannabis vaporization is consuming cannabis in an easy, discreet manner that’s healthier than traditional smoking methods. Both flower and concentrates can be vaporized using a wide range of devices. While there is a lot of negativity in the news about vapes, we suggest to always consume safetly!"
+                    },
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : "https://teal-labradoodle-8359.twil.io/info2"
+                            },
+                            "name" : "collect_comments",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.YES_NO",
+                                    "question" : "Would you like to learn about anything else?",
+                                    "name" : "comments"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "tell me about vapes"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "vapes"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "vaporizer"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "vaporize"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "pen"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "vape pen"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what is a vape"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cannabis vape"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "vape"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "topical",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Topicals are cannabis-infused lotions, balms, and oils that are absorbed through the skin for relief of pain. Because they’re non-intoxicating, topicals are often chosen by people who want the benefits without the 'high' from other methods. Lotions for example, must have no more than 1,000 mg's of THC in a container."
+                    },
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : "https://teal-labradoodle-8359.twil.io/info2"
+                            },
+                            "name" : "collect_comments",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.YES_NO",
+                                    "question" : "Would you like to learn about anything else?",
+                                    "name" : "comments"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "give me info on topicals"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "tell me about topicals"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "info on topical"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what is a topical"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "rub on"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : " balm"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "lotion"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cream"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "topicals"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "topical"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "edible",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Edibles are finally here. Merging culinary arts and cannabis, you can find a wide selection of high-quality baked goods, brownie mixes, cooking oil, and treats such as CBD mints and THC gummies that give the effects of cannabis. In edibles, the amount of THC will be capped at 10 milligrams per container. Remember, different metabolisms will result in a different high for people and it can take anywhere from 20 minutes to 3 hours to feel it! Make sure to eat safetly!"
+                    },
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : "https://teal-labradoodle-8359.twil.io/info2"
+                            },
+                            "name" : "collect_comments",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.YES_NO",
+                                    "question" : "Would you like to learn about anything else?",
+                                    "name" : "comments"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what is an edible"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what are edibles"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "tell me about edibles"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "edible cannabis"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "edible weed"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "food"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "brownies "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cookies"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "edibles"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "edible"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "beverage",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Beverages. We've been waiting for these for a while. While they can't call it beer or wine and there won't actually be any alcohol in it, the max THC content will be 10 mg and will be very enjoyable."
+                    },
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : "https://teal-labradoodle-8359.twil.io/info2"
+                            },
+                            "name" : "collect_comments",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.YES_NO",
+                                    "question" : "Would you like to learn about anything else?",
+                                    "name" : "comments"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what is a cannabis beverage"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what is a beverage"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "liquid"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "beer"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "drink"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "drinks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "beverages"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "beverage"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "planter_start",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "As your personal cannabis assistant, there's a couple of things I can do. I can find you a product, a dispensary, or even information about cannabis. Let me know how I can help."
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "cannabis_product",
+                                "find_dispensary",
+                                "find_info"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go back to the start"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go back to the beginning "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "beginning "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "please go back"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "back"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "back to the start"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go back"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "notify_retail",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Great. I'll have your product ready for you to pick up :) I'll give you a text in a few hours to make sure everything went smooth."
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "london_retail",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Go check out Central Cannabis at 666 Wonderland Rd N. I can let them know you're on the way for your product."
+                    },
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : "https://teal-labradoodle-8359.twil.io/notify"
+                            },
+                            "name" : "collect_comments",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.YES_NO",
+                                    "question" : "Does this work?",
+                                    "name" : "comments"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm in london"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'll be in london"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I am in london "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Strathroy"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Im in london"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I live in london"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "London"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "toronto_retail",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Head downtown and stop by The Hunny Pot Cannabis Co. at 202 Queen St. W. I can let them know you're on the way for your product."
+                    },
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : "https://teal-labradoodle-8359.twil.io/notify"
+                            },
+                            "name" : "collect_comments",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.YES_NO",
+                                    "question" : "Does this work?",
+                                    "name" : "comments"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "oshawa "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "richmond hill"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "scarborough "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "etobicoke "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "north york"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "markham"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "ajax"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "brampton"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "downtown toronto"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "downtown "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Im downtown "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "toront"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "dot"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "t dot"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i live in toronto"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Toronto"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm in Toronto"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "retail_store_after_product_suggestion",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Okay cool! Where are you located?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "toronto_retail",
+                                "london_retail"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "budtender_education",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "We're currently working on this feature. Stay tuned for more updates. In the mean time, how can we help you?"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "how_are_you",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Good, just trying to answer all of your questions! How can I help with a product, dispensary or information?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "cannabis_product",
+                                "find_dispensary",
+                                "find_info"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hru"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how r u"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how are ya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "How is it going"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hows a going"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "How's it going?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how are you doing"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how are you"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "whats_up",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Just trying to be the best possible cannabis assistant for you. How can we help?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "cannabis_product",
+                                "find_dispensary",
+                                "find_product"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what doing"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what are you doing"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sup man"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sup bro"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sup"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what are you up to"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "whats up"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what's up"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what is up"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "user_feeling",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "I can definitely help you with that. Do you want to find a product based on how you're feeling right now or how you want to feel after?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "user_feeling_now",
+                                "user_feeling_after"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "feelings"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "feeling"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Find me a product based on feelings"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Find a product based on feeling"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "user_feeling_after",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Okay. How do you want to feel after?"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "After I smoke"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "How I'm feeling after"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to feel after"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "feeling after"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "feel after"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "after"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "user_feeling_now",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Okay. How are you feeling right now?"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "angry_user_fun",
+            "actions" : {
+                "actions" : [
+                    {
+                        "show" : {
+                            "images" : [
+                                {
+                                    "url" : "https://sayingimages.com/wp-content/uploads/ouch-that-hurt-meme.jpg"
+                                }
+                            ],
+                            "body" : "..."
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "suck"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "ass"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "asshole"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "you are the worst"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "terrible"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i hate you"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "bitch"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "fuck you"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "fuck"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "this sucks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "you suck"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "not_what_I_want",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Oops. Sorry about that! We're still learning... Just say 'go back' to start over."
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's not what i want "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "thats not what i said"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I didn't say that "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I did not say that"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "That is not what i said"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "That is not what I meant"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I don't want that"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I do not want that "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i dont want that"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "not what i want"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that is not what i want"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "Plant_types",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Well, there are three main types of plants. Sativa, Indica and Hybrid. Each strain has it's own range of effects on the body and mind resulting in a wide range of medicinal benefits. Indica strains generally provide a sense of deep body relaxation. Sativa strains tend to provide a more energizing experience. Hyrbid is just a mix of both!"
+                    },
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : "https://teal-labradoodle-8359.twil.io/info1"
+                            },
+                            "name" : "collect_comments",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.YES_NO",
+                                    "question" : "Would you like to learn about anything else?",
+                                    "name" : "comments"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "tell me about plant types please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to know about plant types"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what is plant types"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what are plant types"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what are the plant types"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "tell me about plant types"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "plant types"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "Terpenes",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Terpenes haven't always been discussed so I don't blame you for not knowing. Terpenes are molecules responsible for the aromas in cannabis and other plants. There are over 100 known terpenes in cannabis plants. Crazy huh? Maybe if we help you choose a product we will tell you about the terpenes in it ;)"
+                    },
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : "https://teal-labradoodle-8359.twil.io/info1"
+                            },
+                            "name" : "collect_comments",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.YES_NO",
+                                    "question" : "Would you like to learn about anything else?",
+                                    "name" : "comments"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "What is a terpene "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "terpene "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I would like to know what terpenes are"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to know what terpenes are"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "tell me what terpenes are"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what are terpenes"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to know about terpenes"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "terpenes"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "tell me about terpenes"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "CBD_info",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Looking to try a CBD product? Well, I'll tell you a little about it. CBD is an active, but non-intoxicating component in cannabis. You won't have to worry about feeling high because that is not what CBD is meant for!"
+                    },
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : "https://teal-labradoodle-8359.twil.io/info1"
+                            },
+                            "name" : "collect_comments",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.YES_NO",
+                                    "question" : "Would you like to learn about anything else?",
+                                    "name" : "comments"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "tell me about the cbd effects "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to know the cbd effects"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how does cbd affect me"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd effects"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how will cbd affect me"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how does cbd effect "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how will cbd effect me"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "THC_info",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Looking to try a THC product? Well, I'll tell you a little about it. THC is an active component in cannabis responsible for psychoactive, or intoxicating, effects such as changes in perception and mobility. Do you want to know anything else?"
+                    },
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : "https://teal-labradoodle-8359.twil.io/info1"
+                            },
+                            "name" : "collect_comments",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.YES_NO",
+                                    "question" : "Would you like to learn about anything else?",
+                                    "name" : "comments"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how does thc affect me"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "how will thc affect me"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to know how THC will affect me"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "tell me the effects of THC"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "tell me about THC"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want to know the effects of THC"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "effects of THC"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "tell me about the effects of THC"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_thcCapsule",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Got it! I suggest going with Sativa Capsules by Aurora."
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "What_the_heck_is_that",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Well, I'll tell you! A sativa is typically good to consume mid-day. It allows you to still accomplish your to-do's. Indica on the other hand, is a heavy hitter. This will typically put you on the couch and is mostly used for nighttime use. Hybrid is just a mix of them both! Which do you prefer?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "indica",
+                                "sativa",
+                                "hybrid",
+                                "greeting",
+                                "find_dispensary",
+                                "find_info"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what is it"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what is that"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what does it mean"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "tell me what those mean"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what does it mean"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what do those mean"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what does that mean"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what the heck does that mean"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what the heck is that"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "hybrid",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Hybrid it is! Looks like you want the best of both worlds ;). Do you prefer a pre-roll, flower or capsule?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "product_suggestion_preroll",
+                                "product_suggestion_capsule",
+                                "product_suggestion_flower",
+                                "find_info",
+                                "find_dispensary",
+                                "planter_start"
+                            ]
+                        }
+                    },
+                    {
+                        "remember" : { "plant_type" : "hybrid" }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "highbrid"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I would like a hybrid"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hybrid strain"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "a hybrid"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hybrid strain"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hybrid please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want a hybrid"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "give me a hybrid"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hybrid"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "indica",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Indica it is! Looks like someone wants to relax ;). Do you prefer a pre-roll, flower or capsule?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "product_suggestion_preroll",
+                                "product_suggestion_capsule",
+                                "product_suggestion_flower",
+                                "find_info",
+                                "find_dispensary",
+                                "planter_start"
+                            ]
+                        }
+                    },
+                    {
+                        "remember" : { "plant_type" : "indica" }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "indica"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can I have an indica"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want an indica plant"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "an indica"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Give me an indica"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I would like an indica"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "indica please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want an indica"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "sativa",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Sativa it is! Looks like someone wants to get things done ;). Do you prefer a pre-roll, flower or capsule?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "product_suggestion_preroll",
+                                "product_suggestion_capsule",
+                                "product_suggestion_flower",
+                                "find_info",
+                                "find_dispensary",
+                                "planter_start"
+                            ]
+                        }
+                    },
+                    {
+                        "remember" : { "plant_type" : "sativa" }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I would like a sativa"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Sativa plant"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sativa please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "sativa"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "give me a sativa"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can i have a sativa"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Can i get a sativa"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want a sativa"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_Balancecapsule",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "A balanced capsule, got it! I suggest going with Penelope Softgels by Tweed. It's a hybrid with a CBD level of 1.80 mg and a THC level of 2.50 mg, the price tag is set at $20.35/bottle. On October 25th, one Budtender reviewer said, 'These are very light are a great way for someone that doesn't consume cannabis regularly to try and learn about their tolerance. Also a good way for someone to take multiples of 2.5mg vs one 10mg softgel.' Where are you located?"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balanced"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "both of them"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balanced"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balance please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want a balance"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balanced capsule"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balance"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "give me a balance"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "a balanced capsule"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balanced gel cap"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_CBDcapsule",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "CBD dominant capsule. got it! I suggest going with Harmonic Softgels by Altavie. With a CBD level of 3.51 mg, the price tag is set at $48.40/bottle. On October 9th, one Budtender reviewer said, 'I really enjoyed the Harmonic flower and wanted the convenience of being in Capsules. Thankfully, I found them. I found the experience to be similar to the vaping but, with oil, it lasted much longer than inhalation.' Where are you located?"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "more cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "high cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd dominance"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd dominant "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd capsule"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "want a cbd capsule"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd gel cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd gelcap"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_balancepreroll",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "A balanced pre-roll, got it! I have a few options for you... You can try No.301 Napali CBD Pre-Roll by Haven St. It's an indica with a CBD content between 7-12% and a THC content between 4-8%. Price tag is set at $72.65/pack. I also suggest going with Dancehall Preroll by Spinach. It's a sativa with a CBD content between 2-10% and a THC content between 3-12%. Price tag is set at $14.70/pack. Would you like to find a dispensary or are you good?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : ["find_dispensary"]
+                        }
+                    },
+                    {
+                        "remember" : {
+                            "profile_preference" : "balanced"
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "can i have a balance"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balance of both"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "both"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "give me a balance"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want it to be balanced"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want a balance"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balanced "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balance please"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_CBDpreroll",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "CBD dominant pre-roll, got it! I suggest going with CBD Preroll by THC Biomed. With a CBD content between 7-15% and a THC content between 5-8%, you can't go wrong with a price tag of $20.95/pack. On September 29th, one Budtender review said, 'I purchased these pre rolls and let me tell you they are great tasting and very smooth the high is very relaxing and mellowing I'm definitely gonna be buying more, great strain for relaxing.' Where are you located? "
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "more cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "high cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd dominant "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd dominance "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "please cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I would like a cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "give me a cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd pre-roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd pre roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want a cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_ThcPreRoll",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "THC dominant, got it! I suggest going with Subway Scientist Pre-Roll by Riff. This has a THC content between 15% and 17% and has a price tag of $11.10/pack. On October 10th, one Budtender reviewer said, 'The subway scientist is packed with flavor and a really well grown strain by riff. Its always above 20%. I consumed 3 x 1g pre rolls back to back it was so tasty. Really didnt hit me like a 26% but I loved the experience.' Where are you located?"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "THC for-sure"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "more thc"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "high thc"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "give me thc"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i would like thc"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "a dominance of thc"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "thc dominance "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "thc dominant "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want thc"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want a thc"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "thc please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "thc"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_BalanceFlower",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "A balanced flower, got it! I suggest going with Argyle by Tweed. It has a CBD content between 8-14% and a THC content between 2-10%. Price tag is set at $9.53/g. On November 10th, one Budtender reviewer said, 'This is a great indica that really helps with sleeping. Usually within a half hour i am out.' Where are you located?"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "give me a balance "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : " want a balance "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balance please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balanced"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balance"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "a balance of both"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want a balanced flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balanced flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balance flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "balanced flower please"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_CbdFlower",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "CBD dominant, got it! I suggest going with Great White Shark by San Rafael '71. It has a CBD level of 14% and the price tag is set at $11.85/g. On October 23rd, one budtender reviewer said, 'SR71 kills it yet again with their terpene profile and cannabinoid content levels. Dense nuggets, caked in those essential oils, offering immense flavour and effects.' Where are you located?"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "more cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "high cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i would like cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "give me cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd dominance"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want a cbd dominant "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cbd flower please"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_ThcFlower",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "THC dominant. Got it! I suggest going with Lola Montes by Edison. With a THC content of 21% and a low cost of $9.71/g, you really can't go wrong. On October 28th, one Budtender reviewer said, 'The Lola Montes is one of the cheapest strains in our store and it's also the best out of the cheap strains that we recently carry. I would always recommend it to someone who's looking for something cheap that gives a solid high.' Where are you located?"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "more thc"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "high thc"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "give me thc"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want a thc"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "thc dominance"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "thc dominant"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want thc"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "thc please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "thc"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "thc flower"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_capsule",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Capsule it is! Do you want a dominant of THC, CBD, or a balance?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "product_suggestion_ThcCapsule",
+                                "product_suggestion_CbdCapsule",
+                                "product_suggestion_BalanceCapsule",
+                                "find_info",
+                                "find_dispensary",
+                                "planter_start"
+                            ]
+                        }
+                    },
+                    {
+                        "remember" : { "form_factor" : "Capsule" }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "gel cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Can I have a capsule"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want a caspule"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I would like a capsule"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "gel-cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want a gel cap"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "capsules "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "capsule please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "looking for a capsule"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "capsule "
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_flower",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Flower it is! Do you want a dominant of THC, CBD, or a balance?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "product_suggestion_ThcFlower",
+                                "product_suggestion_CbdFlower",
+                                "product_suggestion_BalanceFlower",
+                                "find_info",
+                                "find_dispensary",
+                                "planter_start"
+                            ]
+                        }
+                    },
+                    {
+                        "remember" : { "form_factor" : "Flower" }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "give me a flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want a flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "flower please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "for flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "look for flower"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm looking for flower"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "product_suggestion_preroll",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Pre-roll it is! Do you want a dominance of THC, CBD, or a balance?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "product_suggestion_ThcPreRoll",
+                                "product_suggestion_CbdPreroll",
+                                "product_suggestion_BalancePreRoll",
+                                "find_info",
+                                "find_dispensary",
+                                "planter_start"
+                            ]
+                        }
+                    },
+                    {
+                        "remember" : {
+                            "form_factor" : "pre-roll"
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "zig zag"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "fatty"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "blunt"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "joint"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want a pre roll!"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "pre"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Pre roll please"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I would like a preroll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I want a preroll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "preroll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "look for a pre roll"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm looking for a preroll"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "cannabis_product",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "We can help you find a product, we just need to ask a couple more questions! Would you like a sativa, indica, hybrid or what the heck does that mean?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "sativa",
+                                "indica",
+                                "hybrid",
+                                "what_the_heck_is_that",
+                                "planter_start"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that good good"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want tree"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want nug"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want bud"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "tree"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "nug"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "buds"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "bud"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "looking for weed"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "marijuana"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want kush"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "kush"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want weed"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "weed"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "find cannabis"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "find a product"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "find a cannabis product"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cannabis"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "help me find a product"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "help me find weed"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm looking for weed"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "what product is right for me?"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cannabis product"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "looking for cannabis"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm looking for a product"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "find_info",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Okay. I can provide some information on a few topics. Would you like to know about the effects of THC, effects of CBD, plant types, terpenes or legalizaiton 2?"
+                    },
+                    {
+                        "listen" : {
+                            "tasks" : [
+                                "terpenes",
+                                "CBD_info",
+                                "thc_info",
+                                "plant_types",
+                                "cannabis_product",
+                                "find_dispensary",
+                                "planter_start",
+                                "legalization_2"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "looking for information"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "more info on a cannabis"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "information on a cannabis"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "info on a product"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "info on product"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "info"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "more info"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "want info"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "i want info "
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "more information"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "find information"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "information"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "find more information"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "find_dispensary",
+            "actions" : {
+                "actions" : [
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : {
+                                    "method" : "POST",
+                                    "uri" : "https://teal-labradoodle-8359.twil.io/nearby_dispensary"
+                                }
+                            },
+                            "name" : "find_dispensary",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.CITY",
+                                    "question" : "Okay! Where in Ontario are you located?",
+                                    "name" : "dispensary_location"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "a shop"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "find a shop"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "shop"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "brick and mortar"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "looking for a shop to sell me"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "help me with a dispensary"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "store"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "looking for a store"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "find a dispensary"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "dispensary"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "I'm looking for a dispensary"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "reroute_user",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Sure, no worries! Do you want a cannabis product, dispensary or information?"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "restart"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "back"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "start over"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go back to the start"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go back to the beginning"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Back to the beginning"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Go Back"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "collect_fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Sorry, I didn't get that. It's a bit smokey in here. Can you say that again!"
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "fallback",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "I'm sorry didn't quite get that. Please say that again."
+                    },
+                    { "listen" : true }
+                ]
+            },
+            "fields" : [],
+            "samples" : []
+        },
+        {
+            "uniqueName" : "greeting",
+            "actions" : {
+                "actions" : [
+                    {
+                        "collect" : {
+                            "on_complete" : {
+                                "redirect" : "https://teal-labradoodle-8359.twil.io/verify-age"
+                            },
+                            "name" : "collect_comments",
+                            "questions" : [
+                                {
+                                    "type" : "Twilio.YES_NO",
+                                    "question" : "Hi, I'm Planter! I make choosing cannabis as easy as asking a friend. Before we get started, I just have to ask a quick question. Are you over 18/19+?",
+                                    "name" : "comments"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Planter"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Man"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Bro"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Dude"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hiii"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "heey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "heeey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Yooo"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Sup man!"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hey bro"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "yo"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hey"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi!"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hello."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hi there."
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "heya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "hello"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good morning"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good afternoon"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "Hi"
+                }
+            ]
+        },
+        {
+            "uniqueName" : "goodbye",
+            "actions" : {
+                "actions" : [
+                    {
+                        "say" : "Thanks for chatting, talk soon!"
+                    }
+                ]
+            },
+            "fields" : [],
+            "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "peace"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "bye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "bye bye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "good bye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "see ya"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodnight"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "goodbye"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "stop talking"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "go away"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "cancel"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that would be all thanks"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that is all thank you"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "that's all for today"
+                }
+            ]
+        }
+    ],
+    "modelBuild" : {
+        "uniqueName" : "Planter_13-11-2019_12.20.27am"
+    }
+}
